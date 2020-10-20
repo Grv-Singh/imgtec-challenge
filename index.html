@@ -27,9 +27,9 @@
     ></script>
     <script src="/js/howler.js"></script>
     <script>
-      var sound = new Howl({
-        src: ["sound.webm", "sound.mp3"],
-      });
+      // var sound = new Howl({
+      //   src: ["sound.webm", "sound.mp3"],
+      // });
     </script>
     <script src="https://unpkg.com/@typicode/pegasus/dist/pegasus.min.js"></script>
   </head>
@@ -361,7 +361,7 @@
             vertical-align: bottom;
           }
         </style>
-        <table class="tg">
+        <table class="tg" style="float: right">
           <thead>
             <tr>
               <th class="tg-baqh" colspan="3">Team B</th>
@@ -557,5 +557,30 @@
         </table>
       </div>
     </div>
+    <script>
+      //Create a Pixi Application
+      let app = new PIXI.Application({
+        width: 1024,
+        height: 704,
+        antialias: true, // default: false
+        transparent: true, // default: false
+        resolution: 1, // default: 1
+        forceCanvas: true,
+      });
+      app.renderer.autoDensity = true;
+
+      //Add the canvas that Pixi automatically created for you to the HTML document
+      document.getElementById("playground").appendChild(app.view);
+
+      PIXI.Loader.shared.add("vectors/sprites/bees.json").load(setup);
+
+      let id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
+
+      let sprite = new Sprite(id["bees.png"]);
+
+      function setup() {
+        //This code will run when the loader has finished loading the image
+      }
+    </script>
   </body>
 </html>

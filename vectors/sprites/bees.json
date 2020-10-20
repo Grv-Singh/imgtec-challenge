@@ -1,0 +1,60 @@
+{"frames": {
+
+"Queen_bee_A.png":
+{
+	"frame": {"x":0,"y":0,"w":281,"h":281},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":281},
+	"sourceSize": {"w":281,"h":281}
+},
+"Queen_bee_B.png":
+{
+	"frame": {"x":281,"y":0,"w":281,"h":281},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":281},
+	"sourceSize": {"w":281,"h":281}
+},
+"Warrior_bee_A.png":
+{
+	"frame": {"x":562,"y":0,"w":188,"h":188},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":188,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Warrior_bee_B.png":
+{
+	"frame": {"x":750,"y":0,"w":188,"h":188},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":188,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Worker_bee_A.png":
+{
+	"frame": {"x":0,"y":281,"w":94,"h":94},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":94},
+	"sourceSize": {"w":94,"h":94}
+},
+"Worker_bee_B.png":
+{
+	"frame": {"x":94,"y":281,"w":94,"h":94},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":94},
+	"sourceSize": {"w":94,"h":94}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bees.png",
+	"format": "RGBA8888",
+	"size": {"w":938,"h":375},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:77bf794ad0fe6663b7a9a95730947d15:d617f73f89e139f2a507a018b82fbc43:ba05e2e121953cd70903a3c7cbab82c4$"
+}
+}
