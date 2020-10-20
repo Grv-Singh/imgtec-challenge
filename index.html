@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swarm Attack</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://raw.githubusercontent.com/MikeMcl/decimal.js/master/decimal.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/balloon-css/balloon.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/q.js/1.5.1/q.js"
+      integrity="sha512-bnuwpR6PtZyO1v+cUXlFD5zXNbPg0MGfqnUiAjM5shSWVWjrfKnqiGc4ususMaPjwvAhHOtrmYuDhfMdn8Lz2g=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/howler.js"></script>
+    <script>
+      var sound = new Howl({
+        src: ["sound.webm", "sound.mp3"],
+      });
+    </script>
+    <script src="https://unpkg.com/@typicode/pegasus/dist/pegasus.min.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-2">
+        <style type="text/css">
+          .tg {
+            border-collapse: collapse;
+            border-color: #9abad9;
+            border-spacing: 0;
+          }
+          .tg td {
+            background-color: #ebf5ff;
+            border-color: #9abad9;
+            border-style: solid;
+            border-width: 1px;
+            color: #444;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg th {
+            background-color: #409cff;
+            border-color: #9abad9;
+            border-style: solid;
+            border-width: 1px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg .tg-baqh {
+            text-align: center;
+            vertical-align: top;
+          }
+          .tg .tg-0lax {
+            text-align: left;
+            vertical-align: top;
+          }
+          .tg .tg-7zrl {
+            text-align: left;
+            vertical-align: bottom;
+          }
+        </style>
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-baqh" colspan="3">Team A</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">Role</td>
+              <td class="tg-0lax">Health</td>
+              <td class="tg-0lax">Kills</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Queen</td>
+              <td class="tg-7zrl">50</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior1</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior2</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior3</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior4</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior5</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior6</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior7</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior8</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior9</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior10</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior11</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior12</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior13</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior14</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior15</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker1</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker2</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker3</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker4</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker5</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker6</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker7</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker8</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker9</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker10</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker11</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker12</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker13</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker14</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker15</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker16</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker17</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker18</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker19</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker20</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-8">
+        <div id="playground" class="row"></div>
+        <div class="row">
+          <center>
+            <a href="#" class="myButton">Play ▶ </a>
+            <style>
+              .myButton {
+                box-shadow: 0px 10px 14px -7px #276873;
+                background: linear-gradient(
+                  to bottom,
+                  #599bb3 5%,
+                  #408c99 100%
+                );
+                background-color: #599bb3;
+                border-radius: 8px;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 13px 32px;
+                text-decoration: none;
+                text-shadow: 0px 1px 0px #3d768a;
+              }
+              .myButton:hover {
+                background: linear-gradient(
+                  to bottom,
+                  #408c99 5%,
+                  #599bb3 100%
+                );
+                background-color: #408c99;
+              }
+              .myButton:active {
+                position: relative;
+                top: 1px;
+              }
+            </style>
+          </center>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <style type="text/css">
+          .tg {
+            border-collapse: collapse;
+            border-color: #9abad9;
+            border-spacing: 0;
+          }
+          .tg td {
+            background-color: #ebf5ff;
+            border-color: #9abad9;
+            border-style: solid;
+            border-width: 1px;
+            color: #444;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg th {
+            background-color: #409cff;
+            border-color: #9abad9;
+            border-style: solid;
+            border-width: 1px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg .tg-baqh {
+            text-align: center;
+            vertical-align: top;
+          }
+          .tg .tg-0lax {
+            text-align: left;
+            vertical-align: top;
+          }
+          .tg .tg-7zrl {
+            text-align: left;
+            vertical-align: bottom;
+          }
+        </style>
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-baqh" colspan="3">Team B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">Role</td>
+              <td class="tg-0lax">Health</td>
+              <td class="tg-0lax">Kills</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Queen</td>
+              <td class="tg-7zrl">50</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior1</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior2</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior3</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior4</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior5</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior6</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior7</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior8</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior9</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior10</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior11</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior12</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior13</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior14</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Warrior15</td>
+              <td class="tg-7zrl">10</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker1</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker2</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker3</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker4</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker5</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker6</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker7</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker8</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker9</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker10</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker11</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker12</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker13</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker14</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker15</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker16</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker17</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker18</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker19</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">Worker20</td>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-0lax"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
