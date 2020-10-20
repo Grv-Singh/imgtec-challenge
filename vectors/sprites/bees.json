@@ -2,59 +2,59 @@
 
 "Queen_bee_A.png":
 {
-	"frame": {"x":0,"y":0,"w":281,"h":281},
+	"frame": {"x":0,"y":0,"w":70,"h":70},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":281},
-	"sourceSize": {"w":281,"h":281}
+	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":70},
+	"sourceSize": {"w":70,"h":70}
 },
 "Queen_bee_B.png":
 {
-	"frame": {"x":281,"y":0,"w":281,"h":281},
+	"frame": {"x":0,"y":70,"w":70,"h":70},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":281},
-	"sourceSize": {"w":281,"h":281}
+	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":70},
+	"sourceSize": {"w":70,"h":70}
 },
 "Warrior_bee_A.png":
 {
-	"frame": {"x":562,"y":0,"w":188,"h":188},
+	"frame": {"x":70,"y":70,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":188,"h":188},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":47},
+	"sourceSize": {"w":47,"h":47}
 },
 "Warrior_bee_B.png":
 {
-	"frame": {"x":750,"y":0,"w":188,"h":188},
+	"frame": {"x":0,"y":140,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":188,"h":188},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":47},
+	"sourceSize": {"w":47,"h":47}
 },
 "Worker_bee_A.png":
 {
-	"frame": {"x":0,"y":281,"w":94,"h":94},
+	"frame": {"x":47,"y":140,"w":24,"h":24},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":94},
-	"sourceSize": {"w":94,"h":94}
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
 },
 "Worker_bee_B.png":
 {
-	"frame": {"x":94,"y":281,"w":94,"h":94},
+	"frame": {"x":71,"y":140,"w":24,"h":24},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":94},
-	"sourceSize": {"w":94,"h":94}
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
 }},
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "bees.png",
 	"format": "RGBA8888",
-	"size": {"w":938,"h":375},
+	"size": {"w":117,"h":187},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:77bf794ad0fe6663b7a9a95730947d15:d617f73f89e139f2a507a018b82fbc43:ba05e2e121953cd70903a3c7cbab82c4$"
+	"smartupdate": "$TexturePacker:SmartUpdate:be0cc945295a2f0b2a0187f93d75c795:0d52e0f3b8c6c7ce8bdf0288fe46a293:ba05e2e121953cd70903a3c7cbab82c4$"
 }
 }

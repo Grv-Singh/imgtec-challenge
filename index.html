@@ -574,12 +574,132 @@
 
       PIXI.Loader.shared.add("vectors/sprites/bees.json").load(setup);
 
-      let id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
+      // let id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
 
-      let sprite = new Sprite(id["bees.png"]);
-
+      //Define variables that might be used in more
+      //than one function
+      let queenA, queenB, warrior, worker, id, blobAWo, blobBWo, blobA, blobB;
       function setup() {
-        //This code will run when the loader has finished loading the image
+        id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
+
+        queenA = new PIXI.Sprite(
+          PIXI.loader.resources["vectors/sprites/bees.json"].textures[
+            "Queen_bee_A.png"
+          ]
+        );
+
+        queenA.y = 212;
+        queenA.x = 10;
+
+        queenB = new PIXI.Sprite(
+          PIXI.loader.resources["vectors/sprites/bees.json"].textures[
+            "Queen_bee_B.png"
+          ]
+        );
+        queenB.x = 900;
+        queenB.y = 212;
+
+        // warriorA1 = new PIXI.Sprite(
+        //   PIXI.loader.resources["vectors/sprites/bees.json"].textures[
+        //     "Warrior_bee_A1.png"
+        //   ]
+        // );
+
+        app.stage.addChild(queenB);
+        app.stage.addChild(queenA);
+
+        //Make the blobs
+        let numberOfBlobs = 15,
+          spacing = 48,
+          xOffset = 150;
+
+        //Make as many blobs as there are `numberOfBlobs`
+        for (let i = 0; i < numberOfBlobs; i++) {
+          //Make a blob
+          blobA = new PIXI.Sprite(id["Warrior_bee_A.png"]);
+          blobB = new PIXI.Sprite(id["Warrior_bee_B.png"]);
+
+          //Space each blob horizontally according to the `spacing` value.
+          //`xOffset` determines the point from the left of the screen
+          //at which the first blob should be added.
+          let xA = spacing * i + xOffset;
+
+          //Give the blob a random y position
+          //(`randomInt` is a custom function - see below)
+          let yA = randomInt(0, app.stage.height - blobA.height);
+
+          let xB = spacing * i + xOffset;
+
+          //Give the blob a random y position
+          //(`randomInt` is a custom function - see below)
+          let yB = randomInt(0, app.stage.height - blobB.height);
+
+          //Set the blob's position
+          blobA.x = xA;
+          blobA.y = yA;
+          blobB.x = xB;
+          blobB.y = yB;
+
+          //Add the blob sprite to the stage
+          app.stage.addChild(blobA);
+          app.stage.addChild(blobB);
+        }
+
+        //Make the blobs
+        let numberOfBlobsWo = 20,
+          spacingWo = 48,
+          xOffsetWo = 150;
+
+        //Make as many blobs as there are `numberOfBlobs`
+        for (let i = 0; i < numberOfBlobsWo; i++) {
+          //Make a blob
+          blobAWo = new PIXI.Sprite(id["Worker_bee_A.png"]);
+          blobBWo = new PIXI.Sprite(id["Worker_bee_B.png"]);
+
+          //Space each blob horizontally according to the `spacing` value.
+          //`xOffset` determines the point from the left of the screen
+          //at which the first blob should be added.
+          let xA = spacingWo * i + xOffsetWo;
+
+          //Give the blob a random y position
+          //(`randomInt` is a custom function - see below)
+          let yA = randomInt(0, app.stage.height - blobAWo.height);
+
+          let xB = spacingWo * i + xOffsetWo;
+
+          //Give the blob a random y position
+          //(`randomInt` is a custom function - see below)
+          let yB = randomInt(0, app.stage.height - blobBWo.height);
+
+          //Set the blob's position
+          blobAWo.x = xA;
+          blobAWo.y = yA;
+          blobBWo.x = xB;
+          blobBWo.y = yB;
+
+          //Add the blob sprite to the stage
+          app.stage.addChild(blobAWo);
+          app.stage.addChild(blobBWo);
+        }
+        app.ticker.add((delta) => gameLoop(delta));
+      }
+
+      function gameLoop(delta) {
+        //Move the cat 1 pixel
+        blobAWo.x += 1;
+        blobBWo.x += 1;
+        blobA.x += 1;
+        blobB.x -= 1;
+        queenA += 1;
+        queenB += 1;
+        //Optionally use the `delta` value
+        //cat.x += 1 + delta;
+      }
+
+      //Start the loop
+      gameLoop();
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       }
     </script>
   </body>
