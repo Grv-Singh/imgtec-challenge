@@ -558,6 +558,11 @@
       </div>
     </div>
     <script>
+      let loader = PIXI.loader,
+        resources = PIXI.loader.resources,
+        TextureCache = PIXI.utils.TextureCache,
+        Sprite = PIXI.Sprite,
+        Rectangle = PIXI.Rectangle;
       //Create a Pixi Application
       let app = new PIXI.Application({
         width: 1024,
@@ -567,43 +572,57 @@
         resolution: 1, // default: 1
         forceCanvas: true,
       });
-      app.renderer.autoDensity = true;
 
       //Add the canvas that Pixi automatically created for you to the HTML document
       document.getElementById("playground").appendChild(app.view);
 
-      PIXI.Loader.shared.add("vectors/sprites/bees.json").load(setup);
+      loader.add("vectors/sprites/bees.json").load(setup);
 
       // let id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
 
       //Define variables that might be used in more
       //than one function
-      let queenA, queenB, warrior, worker, id, blobAWo, blobBWo, blobA, blobB;
-      function setup() {
-        id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
+      let style = new PIXI.TextStyle({
+        fontFamily: "Arial",
+        fontSize: 36,
+        fill: "white",
+        stroke: "#ff3300",
+        strokeThickness: 4,
+        dropShadow: true,
+        dropShadowColor: "#000000",
+        dropShadowBlur: 4,
+        dropShadowAngle: Math.PI / 6,
+        dropShadowDistance: 6,
+      });
 
-        queenA = new PIXI.Sprite(
-          PIXI.loader.resources["vectors/sprites/bees.json"].textures[
+      let message = new PIXI.Text("War !", style);
+      message.position.set(500, 500);
+      app.stage.addChild(message);
+      app.renderer.autoDensity = true;
+
+      var queenA, queenB, id;
+      var blobAWo, blobBWo, blobA, blobB;
+      let state = play;
+      function setup() {
+        id = loader.resources["vectors/sprites/bees.json"].textures;
+
+        queenA = new Sprite(
+          loader.resources["vectors/sprites/bees.json"].textures[
             "Queen_bee_A.png"
+          ]
+        );
+
+        queenB = new Sprite(
+          loader.resources["vectors/sprites/bees.json"].textures[
+            "Queen_bee_B.png"
           ]
         );
 
         queenA.y = 212;
         queenA.x = 10;
 
-        queenB = new PIXI.Sprite(
-          PIXI.loader.resources["vectors/sprites/bees.json"].textures[
-            "Queen_bee_B.png"
-          ]
-        );
         queenB.x = 900;
         queenB.y = 212;
-
-        // warriorA1 = new PIXI.Sprite(
-        //   PIXI.loader.resources["vectors/sprites/bees.json"].textures[
-        //     "Warrior_bee_A1.png"
-        //   ]
-        // );
 
         app.stage.addChild(queenB);
         app.stage.addChild(queenA);
@@ -616,8 +635,8 @@
         //Make as many blobs as there are `numberOfBlobs`
         for (let i = 0; i < numberOfBlobs; i++) {
           //Make a blob
-          blobA = new PIXI.Sprite(id["Warrior_bee_A.png"]);
-          blobB = new PIXI.Sprite(id["Warrior_bee_B.png"]);
+          blobA = new Sprite(id["Warrior_bee_A.png"]);
+          blobB = new Sprite(id["Warrior_bee_B.png"]);
 
           //Space each blob horizontally according to the `spacing` value.
           //`xOffset` determines the point from the left of the screen
@@ -644,7 +663,7 @@
           app.stage.addChild(blobA);
           app.stage.addChild(blobB);
         }
-
+        app.ticker.add((delta) => gameLoop(delta));
         //Make the blobs
         let numberOfBlobsWo = 20,
           spacingWo = 48,
@@ -653,8 +672,8 @@
         //Make as many blobs as there are `numberOfBlobs`
         for (let i = 0; i < numberOfBlobsWo; i++) {
           //Make a blob
-          blobAWo = new PIXI.Sprite(id["Worker_bee_A.png"]);
-          blobBWo = new PIXI.Sprite(id["Worker_bee_B.png"]);
+          blobAWo = new Sprite(id["Worker_bee_A.png"]);
+          blobBWo = new Sprite(id["Worker_bee_B.png"]);
 
           //Space each blob horizontally according to the `spacing` value.
           //`xOffset` determines the point from the left of the screen
@@ -674,8 +693,12 @@
           //Set the blob's position
           blobAWo.x = xA;
           blobAWo.y = yA;
+          // blobAWo.vx = 0;
+          // blobAWo.vy = 0;
           blobBWo.x = xB;
           blobBWo.y = yB;
+          // blobAWo.vx = 0;
+          // blobAWo.vy = 0;
 
           //Add the blob sprite to the stage
           app.stage.addChild(blobAWo);
@@ -683,23 +706,109 @@
         }
         app.ticker.add((delta) => gameLoop(delta));
       }
-
       function gameLoop(delta) {
-        //Move the cat 1 pixel
+        state(delta);
+      }
+      function play(delta) {
+        // blobAWo.vx = 1;
+        // blobAWo.vy = 1;
+        // blobA.vx = 1;
+        // blobB.vy = 1;
+        // queenA.vx = 1;
+        // queenB.vy = 1;
+        // //Move the cat 1 pixel
+        // queenA.x += queenA.vx;
+        // queenB.x += queenB.vx;
+        // blobA.x += blobA.vx;
+        // blobB.x += blobB.vx;
+        // blobAWo.x += blobA.vx;
+        // blobBWo.x += blobA.vx;
+        // queenA.y += queenA.vy;
+        // queenB.y += queenB.vy;
+        // blobA.y += blobA.vy;
+        // blobB.y += blobB.vy;
+        // blobAWo.y += blobA.vy;
+        // blobBWo.y += blobA.vy;
+
+        queenA.x += 1;
+        queenB.x -= 1;
+        blobA.x += 1;
+        blobB.x += 1;
         blobAWo.x += 1;
         blobBWo.x += 1;
-        blobA.x += 1;
-        blobB.x -= 1;
-        queenA += 1;
-        queenB += 1;
+        // queenA.y += 1;
+        // queenB.y += 1;
+        // blobA.y += 1;
+        // blobB.y += 1;
+        // blobAWo.y += 1;
+        // blobBWo.y += 1;
+
+        // app.stage.addChild(message);
+        //check for a collision between the cat and the box
+        if (hitTestRectangle(queenA, queenB)) {
+          //if there's a collision, change the message text
+          //and tint the box red
+          message.text = "hit!";
+          // box.tint = 0xff3300;
+        } else {
+          //if there's no collision, reset the message
+          //text and the box's color
+          message.text = "No collision...";
+          // box.tint = 0xccff99;
+        }
+
         //Optionally use the `delta` value
         //cat.x += 1 + delta;
       }
 
-      //Start the loop
-      gameLoop();
       function randomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function hitTestRectangle(r1, r2) {
+        //Define the variables we'll need to calculate
+        let hit, combinedHalfWidths, combinedHalfHeights, vx, vy;
+
+        //hit will determine whether there's a collision
+        hit = false;
+
+        //Find the center points of each sprite
+        r1.centerX = r1.x + r1.width / 2;
+        r1.centerY = r1.y + r1.height / 2;
+        r2.centerX = r2.x + r2.width / 2;
+        r2.centerY = r2.y + r2.height / 2;
+
+        //Find the half-widths and half-heights of each sprite
+        r1.halfWidth = r1.width / 2;
+        r1.halfHeight = r1.height / 2;
+        r2.halfWidth = r2.width / 2;
+        r2.halfHeight = r2.height / 2;
+
+        //Calculate the distance vector between the sprites
+        vx = r1.centerX - r2.centerX;
+        vy = r1.centerY - r2.centerY;
+
+        //Figure out the combined half-widths and half-heights
+        combinedHalfWidths = r1.halfWidth + r2.halfWidth;
+        combinedHalfHeights = r1.halfHeight + r2.halfHeight;
+
+        //Check for a collision on the x axis
+        if (Math.abs(vx) < combinedHalfWidths) {
+          //A collision might be occurring. Check for a collision on the y axis
+          if (Math.abs(vy) < combinedHalfHeights) {
+            //There's definitely a collision happening
+            hit = true;
+          } else {
+            //There's no collision on the y axis
+            hit = false;
+          }
+        } else {
+          //There's no collision on the x axis
+          hit = false;
+        }
+
+        //`hit` will be either `true` or `false`
+        return hit;
       }
     </script>
   </body>
