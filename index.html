@@ -329,9 +329,10 @@ let hit = false;
 
       function play(delta) {
         for(i=0;i<spritesB.length;i++){
-spritesB[i].rotation += 1;
+
         if(spritesB[i].x>=1024 || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
+          spritesB[i].rotation += 1;
         }
         if(spritesB[i].y<=0 || spritesB[i].y >=704){
           spritesB[i].vy *=-1;
@@ -344,14 +345,14 @@ spritesB[i].rotation += 1;
         spritesB[i].y += spritesB[i].vy;
         }
         for(j=0;j<spritesA.length;j++){
-spritesA[j].rotation += 1;
+
 if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vx *=-1;
-          spritesA[j].rotation += 3.14;
+          spritesA[j].rotation += 1;
         }
         if(spritesA[j].y<=0 || spritesA[j].y >=704){
           spritesA[j].vy *=-1;
-          spritesA[j].rotation += 3.14;
+          // spritesA[j].rotation += 3.14;
         }
 
           // spritesA[j].vx = 1;
