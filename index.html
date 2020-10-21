@@ -81,10 +81,13 @@
       <div class="col-md-2" id="score1">
       </div>
       <div class="col-md-8">
+        <center>
+        <h3>Playground</h3>
+        </center>
         <div id="playground" class="row"></div>
         <div class="row">
           <center>
-            <font style="float:left;">&nbsp; &nbsp; Immobile bees are being defensive &nbsp; &nbsp;</font>
+            <font style="float:left;">&nbsp; &nbsp; Immobile bees are being defensive <br> <br>On each tick, the bee starts to die and therefore shades away from playground &nbsp; &nbsp; </font>
             <a href="#" onclick="location.reload();" class="myButton">Randomise 🔀 </a>
             <style>
               .myButton {
@@ -282,7 +285,7 @@ let hit = false;
 
       function play(delta) {
         for(i=0;i<spritesB.length;i++){
-spritesB[i].rotation += 3.14;
+spritesB[i].rotation += 1;
         if(spritesB[i].x>=1024 || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
           
@@ -296,7 +299,7 @@ spritesB[i].rotation += 3.14;
         spritesB[i].y += spritesB[i].vy;
         }
         for(j=0;j<spritesA.length;j++){
-spritesA[j].rotation += 3.14;
+spritesA[j].rotation += 1;
 if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vx *=-1;
           
