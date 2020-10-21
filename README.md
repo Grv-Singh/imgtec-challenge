@@ -25,4 +25,8 @@ Theory :  <a href="https://www.mdbka.com/bee-information/#:~:text=The%20main%20d
 
 Idea : <a href="https://www.youtube.com/watch?v=mDR0_yfKQa0" target="_blank">Video</a>
 
+## Future Scope
+* Detecting side of attack to simulate bounce back.
+* Keyboard controls.
+
  #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time.
