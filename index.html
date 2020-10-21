@@ -130,7 +130,7 @@
       </div>
       <div class="col-md-2" id="score2">
         <audio autoplay="autoplay">
-     <source src="sounds/background.wav" />     
+        <audiopreload="auto"autoplay="autoplay"><source src="sounds/background.wav"type="audio/wav" /></audiopreload>    
  </audio>
       </div>
     </div>
@@ -288,7 +288,7 @@ let hit = false;
 
       function play(delta) {
         for(i=0;i<spritesB.length;i++){
-spritesB[i].rotation += 0.01;
+spritesB[i].rotation += 1;
         if(spritesB[i].x>=1024 || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
           
@@ -302,7 +302,7 @@ spritesB[i].rotation += 0.01;
         spritesB[i].y += spritesB[i].vy;
         }
         for(j=0;j<spritesA.length;j++){
-spritesA[j].rotation += 0.01;
+spritesA[j].rotation += 1;
 if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vx *=-1;
           
