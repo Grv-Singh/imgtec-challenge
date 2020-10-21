@@ -530,10 +530,20 @@ function update() {
         table.appendChild(tableBody);
         document.getElementById(id).appendChild(table);
         if(scoreA[1][1] <= 0){
+          var win = new Howl({
+  src: ['/imgtec-fullstack-challenge/sounds/result.wav']
+});
+
+win.play();
 message.text = "Queen A dead, Swarm B wins!";
 location.reload();
         }
         if(scoreB[1][1] <= 0){
+          var win = new Howl({
+  src: ['/imgtec-fullstack-challenge/sounds/result.wav']
+});
+
+win.play();
 message.text = "Queen B dead, Swarm A wins!";
 location.reload();
         }
