@@ -541,7 +541,8 @@ function incrementSeconds() {
     seconds += 1;
     el.innerText = "Wartime : " + seconds + " seconds.";
 }
-incrementSeconds();
+setTimeout(function(){ incrementSeconds(); }, 3000);
+
     </script>
   </body>
 </html>
