@@ -26,15 +26,16 @@
       crossorigin="anonymous"
     ></script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -->
     <script src="/imgtec-fullstack-challenge/js/howler.js"></script>
-    <script src="/imgtec-fullstack-challenge/js/sound.js"></script>
+    <!-- <script src="/imgtec-fullstack-challenge/js/sound.js"></script> -->
     <script src="/imgtec-fullstack-challenge/js/bump.js"></script>
     <!-- loading JS assets  -->
     <script src="https://unpkg.com/@typicode/pegasus/dist/pegasus.min.js"></script>
     <script>
-      sounds.load([
-  "sounds/background.mp3"
-]);
- music.play();
+    var sound = new Howl({
+  src: ['/imgtec-fullstack-challenge/sounds/background.mp3']
+});
+
+sound.play();
     </script>
     <style>
       /* stylesheet */
