@@ -533,7 +533,7 @@ function update() {
           var win = new Howl({
   src: ['/imgtec-fullstack-challenge/sounds/result.wav']
 });
-
+sound.pause();
 win.play();
 message.text = "Queen A dead, Swarm B wins!";
 location.reload();
@@ -542,7 +542,7 @@ location.reload();
           var win = new Howl({
   src: ['/imgtec-fullstack-challenge/sounds/result.wav']
 });
-
+sound.pause();
 win.play();
 message.text = "Queen B dead, Swarm A wins!";
 location.reload();
