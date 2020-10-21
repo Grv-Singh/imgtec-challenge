@@ -329,10 +329,10 @@ let hit = false;
 
       function play(delta) {
         for(i=0;i<spritesB.length;i++){
-
+spritesB[i].rotation += 3.14;
         if(spritesB[i].x>=1024 || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
-          spritesB[i].rotation += 1;
+          
         }
         if(spritesB[i].y<=0 || spritesB[i].y >=704){
           spritesB[i].vy *=-1;
@@ -345,10 +345,10 @@ let hit = false;
         spritesB[i].y += spritesB[i].vy;
         }
         for(j=0;j<spritesA.length;j++){
-
+spritesA[j].rotation += 3.14;
 if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vx *=-1;
-          spritesA[j].rotation += 1;
+          
         }
         if(spritesA[j].y<=0 || spritesA[j].y >=704){
           spritesA[j].vy *=-1;
@@ -610,6 +610,36 @@ function update() {
 
       updateTable(scoreA, "score1");
       updateTable(scoreB, "score2");
+
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
     </script>
   </body>
 </html>
