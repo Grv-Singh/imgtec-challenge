@@ -14,6 +14,9 @@
 *  Fight does on for 10 seconds and the winner is declared.
 *  On each tick, the fighting bees starts to die and therefore shades away from playground.
  
+Swarming is a honey bee colony's natural means of reproduction. In the process of swarming, a single colony splits into two or more distinct colonies, as shown.
+
+Swarms are usually smaller and are accompanied by a Queen, the biggest here.
 
 ## Sources
 Sound : <a href="https://www.soundsnap.com/" target="_blank">Bees Sound - Soundsnap</a>
