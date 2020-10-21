@@ -181,6 +181,10 @@ let b = new Bump(PIXI);
       message.position.set(200, 500);
       app.stage.addChild(message);
       app.renderer.autoDensity = true;
+        app.renderer.view.style.position = "absolute";
+  app.renderer.view.style.display = "block";
+  app.renderer.autoResize = true;
+  app.renderer.resize(window.innerWidth, window.innerHeight);
 
       var queenA, queenB, id;
       var blobAWo, blobBWo, blobA, blobB;
@@ -302,11 +306,11 @@ let hit = false;
         for(i=0;i<spritesB.length;i++){
           // rotation to get bee effect
 
-        if(spritesB[i].x>=1024 || spritesB[i].x <=0){
+        if(spritesB[i].x>=window.innerWidth || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
           spritesB[i].rotation += 1;
         }
-        if(spritesB[i].y<=0 || spritesB[i].y >=704){
+        if(spritesB[i].y<=0 || spritesB[i].y >=window.innerHeight){
           spritesB[i].vy *=-1;
           spritesB[i].rotation += 1;
         }
