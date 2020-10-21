@@ -355,7 +355,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
               case 'Queen' : damageA = 1; damageB = 1; c1.alpha -= 1/10;
                 break;
             }
-             message.text = ('⚠ ' + character1 + ' ' + swarm1 + ' ' + damageA +' damage to ' + character2 + ' ' + swarm2 + ' 🗡 ' + character2 + ' ' + swarm2 + ' ' + damageB +' damage to ' + character1 + ' ' + swarm1);
+             message.text = ('⚠ ' + character1 + ' ' + swarm1 + ' ' + damageA +' 🩸 to ' + character2 + ' ' + swarm2 + '. ' + character2 + ' ' + swarm2 + ' ' + damageB +' 🩸 to ' + character1 + ' ' + swarm1);
             if(scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1] >= 0){
           scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1]-=damageB;
           scoreA[parseInt(getKeyByValue(spritesA,c1))+1][2]+=1;
