@@ -309,6 +309,18 @@ blobBWo.vy = randomInt(-1,1) ;
 
 
         app.ticker.add((delta) => gameLoop(delta));
+        var sumA = 0, sumB = 0;
+        setTimeout(function(){ scoreA.forEach(function (rowData) {sumA = sumA + parseInt(rowData[1])}); }, 10000);
+        setTimeout(function(){ scoreB.forEach(function (rowData) {sumB = sumB + parseInt(rowData[1])}); }, 10000);
+        setTimeout(function(){
+        if(sumA > sumB){
+message.text = "Swarm A wins!";
+location.reload();
+        }else{
+          message.text = "Swarm B wins!";
+          location.reload();
+        }
+        }, 13000);
       }
       function gameLoop(delta) {
         state(delta);
