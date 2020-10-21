@@ -288,7 +288,7 @@ let hit = false;
 
       function play(delta) {
         for(i=0;i<spritesB.length;i++){
-spritesB[i].rotation += 1;
+spritesB[i].rotation += 10;
         if(spritesB[i].x>=1024 || spritesB[i].x <=0){
           spritesB[i].vx *=-1;
           
@@ -302,7 +302,7 @@ spritesB[i].rotation += 1;
         spritesB[i].y += spritesB[i].vy;
         }
         for(j=0;j<spritesA.length;j++){
-spritesA[j].rotation += 1;
+spritesA[j].rotation += 10;
 if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vx *=-1;
           
