@@ -100,7 +100,7 @@ sound.play();
         <div id="playground" class="row"></div>
         <div class="row">
           <center>
-            <a href="#" onclick="window.location.reload();;" class="myButton">Randomise 🔀 </a>
+            <a href="#" onclick="window.location.reload();" class="myButton">Randomise 🔀 </a>
             <style>
               .myButton {
                 box-shadow: 0px 10px 14px -7px #276873;
@@ -364,12 +364,12 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
             }
 if(scoreA[1][1] <= 0){
 message.text = "Queen A dead, Swarm B wins!";
-window.location.reload();
+// window.location.reload();
 return false;
         }
         if(scoreB[1][1] <= 0){
 message.text = "Queen B dead, Swarm A wins!";
-window.location.reload();
+// window.location.reload();
 return false;
         }
           update();
