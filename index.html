@@ -274,6 +274,16 @@ blobBWo.vy = randomInt(-1,1) ;
 // looping the logic in game
         app.ticker.add((delta) => gameLoop(delta));
 
+if(scoreA[1][1] <= 0){
+message.text = "Queen A dead, Swarm B wins!";
+window.location.reload();
+return false;
+        }
+        if(scoreB[1][1] <= 0){
+message.text = "Queen B dead, Swarm A wins!";
+window.location.reload();
+return false;
+        }
         
       }
       function gameLoop(delta) {
@@ -319,7 +329,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
   for (let j = i + 1; j < spritesB.length; j++) {
     let c2 = spritesB[j];
     if (b.hit(c1, c2, true, true)) {     
-      // getting metadata of 2 bees fighting     
+      // getting metadata of the 2 bees fighting     
           let character1 = (c1._texture.textureCacheIds[0]).split('_')[0];
           let swarm1 = ((c1._texture.textureCacheIds[0]).split('_')[2]).split('.')[0];
           let character2 = (c2._texture.textureCacheIds[0]).split('_')[0];
@@ -376,16 +386,6 @@ function getKeyByValue(object, value) {
         
 function update() {
   // update scores
-  if(scoreA[1][1] <= 0){
-message.text = "Queen A dead, Swarm B wins!";
-window.location.reload();
-return false;
-        }
-        if(scoreB[1][1] <= 0){
-message.text = "Queen B dead, Swarm A wins!";
-window.location.reload();
-return false;
-        }
           updateTable(scoreA, "score1");
           updateTable(scoreB, "score2");  
 }
