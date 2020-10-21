@@ -275,16 +275,12 @@ blobBWo.vy = randomInt(-1,1) ;
         app.ticker.add((delta) => gameLoop(delta));
         setTimeout(function(){
 if(scoreA[1][1] <= 0){
-  setTimeout(function(){
 message.text = "Queen A dead, Swarm B wins!";
-  },2000);
 window.location.reload();
 return false;
         }
         if(scoreB[1][1] <= 0){
-          setTimeout(function(){
 message.text = "Queen B dead, Swarm A wins!";
-          },2000);
 window.location.reload();
 return false;
         }
