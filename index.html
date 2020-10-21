@@ -326,7 +326,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           let character2 = (c2._texture.textureCacheIds[0]).split('_')[0];
           let swarm2 = ((c2._texture.textureCacheIds[0]).split('_')[2]).split('.')[0];
           let damageA = 0,damageB = 0;
-          console.log(character1, character2);
+          console.log(character1 +' v/s ' + character2);
           if(swarm2!=swarm1){
             switch(character1){
               case 'Warrior': damageA = 6; damageB = 6; c2.alpha -= 1/50;
