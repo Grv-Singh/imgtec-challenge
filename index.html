@@ -298,8 +298,8 @@ let hit = false;
         }
           // spritesB[i].vy = 1;
         
-        spritesB[i].x += spritesB[i].vx;
-        spritesB[i].y += spritesB[i].vy;
+        spritesB[i].x += (spritesB[i].vx*3);
+        spritesB[i].y += (spritesB[i].vy*3);
         }
         for(j=0;j<spritesA.length;j++){
           // rotation to get bee effect
@@ -312,8 +312,8 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           spritesA[j].vy *=-1;
         }
         
-        spritesA[j].x -= spritesA[j].vx;
-        spritesA[j].y -= spritesA[j].vy;
+        spritesA[j].x -= (spritesA[j].vx*3);
+        spritesA[j].y -= (spritesA[j].vy*3);
         }
         
         for (let i = 0; i < spritesA.length; i++) {
