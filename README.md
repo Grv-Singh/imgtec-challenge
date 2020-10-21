@@ -1,5 +1,4 @@
 # Swarm Attack
-## Imagination Technologies Full Stack development challenge
  
 ## Team A : Lime
 ## Team B : Red
