@@ -10,7 +10,7 @@
 | Worker | 3 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png)| 5 |
  
  * Immobile bees can be counted as defendants of beehive.
-*  On each bite, the healh depletes denoted by fades away from playground.
+*  With respective weightage of bites, the healh depletes denoted by fades away from playground.
  * The bees seem to rotate in circle due to <a href="https://en.wikipedia.org/wiki/Stroboscopic_effect#:~:text=The%20stroboscopic%20effect%20is%20a,of%20short%20or%20instantaneous%20samples." target="_blank">Stroboscopic effect</a>, more.
  
 #### Swarming is a honey bee colony's natural means of reproduction. In the process of swarming, a single colony splits into two or more distinct colonies, as shown.
