@@ -538,7 +538,7 @@ function update() {
 
     const renderTimer = () => {
       count += 1;
-      seconds.innerHTML = "Wartime: "+ (count % 60).toString().padStart(2, "0");
+      seconds.innerHTML = "Wartime: "+ (count % 60).toString().padStart(2, "0") + " seconds";
     }
 
     const timer = setInterval(renderTimer, 1000);
