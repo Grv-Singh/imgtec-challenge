@@ -282,18 +282,6 @@ blobBWo.vy = randomInt(-1,1) ;
 let hit = false;
 
       function play(delta) {
-
-if(scoreA[1][1] <= 0){
-message.text = "Queen A dead, Swarm B wins!";
-window.location.reload();
-return false;
-        }
-        if(scoreB[1][1] <= 0){
-message.text = "Queen B dead, Swarm A wins!";
-window.location.reload();
-return false;
-        }
-
         for(i=0;i<spritesB.length;i++){
           // rotation to get bee effect
 
@@ -390,6 +378,16 @@ function getKeyByValue(object, value) {
         
 function update() {
   // update scores
+  if(scoreA[1][1] <= 0){
+message.text = "Queen A dead, Swarm B wins!";
+window.location.reload();
+return false;
+        }
+        if(scoreB[1][1] <= 0){
+message.text = "Queen B dead, Swarm A wins!";
+window.location.reload();
+return false;
+        }
           updateTable(scoreA, "score1");
           updateTable(scoreB, "score2");  
 }
