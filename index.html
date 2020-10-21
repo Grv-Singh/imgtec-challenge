@@ -270,12 +270,13 @@ blobBWo.vy = randomInt(-1,1) ;
         setTimeout(function(){ scoreB.forEach(function (rowData) {sumB = sumB + parseInt(rowData[1])}); }, 10000);
         // result
         setTimeout(function(){
-        if(sumA > sumB){
-message.text = "Swarm B wins!";
+        if(scoreA[1][1] <= 0){
+message.text = "Queen A dead, Swarm B wins!";
 location.reload();
-        }else{
-          message.text = "Swarm A wins!";
-          location.reload();
+        }
+        if(scoreB[1][1] <= 0){
+message.text = "Queen B dead, Swarm A wins!";
+location.reload();
         }
         }, 13000);
       }
