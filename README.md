@@ -28,5 +28,6 @@ Idea : <a href="https://www.youtube.com/watch?v=mDR0_yfKQa0" target="_blank">Vid
 ## Future Scope
 * Detecting side of attack to simulate bounce back.
 * Keyboard controls.
+* Responsive Design
 
  #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time.
