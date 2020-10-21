@@ -360,15 +360,6 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
                 c2.alpha = 0;
               }
             }
-
-          update();
-          }
-        }
-        
-        }
-  }
-
-  
 if(scoreA[1][1] <= 0){
 message.text = "Queen A dead, Swarm B wins!";
 window.location.reload();
@@ -379,6 +370,15 @@ message.text = "Queen B dead, Swarm A wins!";
 window.location.reload();
 return false;
         }
+          update();
+          }
+        }
+        
+        }
+  }
+
+  
+
 }
 
 
