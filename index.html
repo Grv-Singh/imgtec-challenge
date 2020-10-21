@@ -492,6 +492,9 @@ function update() {
       function updateTable(tableData, id) {
         document.getElementById(id).innerHTML = "";
         var table = document.createElement("table");
+        if(id=='score2'){
+          table.setAttribute('style','float:right;');
+        }
         var header = table.createTHead();
         var rowH = header.insertRow(0);
   var cellH = rowH.insertCell(0);
