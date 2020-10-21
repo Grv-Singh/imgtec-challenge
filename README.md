@@ -11,7 +11,6 @@
 | Worker | 3 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png)| 5 |
  
  * Immobile bees can be counted as defendants of beehive.
-*  Fight does on for 15 seconds and the winner is declared.
 *  On each tick, the fighting bees starts to die and therefore shades away from playground.
  
 Swarming is a honey bee colony's natural means of reproduction. In the process of swarming, a single colony splits into two or more distinct colonies, as shown.
