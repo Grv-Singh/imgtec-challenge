@@ -295,6 +295,7 @@ let hit = false;
         }
         if(spritesB[i].y<=0 || spritesB[i].y >=704){
           spritesB[i].vy *=-1;
+          spritesB[i].rotation += 1;
         }
           // spritesB[i].vy = 1;
         
@@ -310,6 +311,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
         }
         if(spritesA[j].y<=0 || spritesA[j].y >=704){
           spritesA[j].vy *=-1;
+          spritesA[j].rotation += 1;
         }
         
         spritesA[j].x -= (spritesA[j].vx*3);
