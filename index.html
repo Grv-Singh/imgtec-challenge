@@ -335,7 +335,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           let character2 = (c2._texture.textureCacheIds[0]).split('_')[0];
           let swarm2 = ((c2._texture.textureCacheIds[0]).split('_')[2]).split('.')[0];
           let damageA = 0,damageB = 0;
-          message.text = (character1 + ' ' + swarm1 +' v/s ' + character2 + ' ' + swarm2);
+         
           if(swarm2!=swarm1){
             switch(character1){
               case 'Warrior': damageA = 6; damageB = 6; c2.alpha -= 1/50;
@@ -353,6 +353,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
               case 'Queen' : damageA = 1; damageB = 1; c1.alpha -= 1/10;
                 break;
             }
+             message.text = (character1 + ' ' + swarm1 + ' ' + damageA +' damage to ' + character2 + ' ' + swarm2);
             if(scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1] >= 0){
           scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1]-=damageB;
           scoreA[parseInt(getKeyByValue(spritesA,c1))+1][2]+=1;
