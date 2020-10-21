@@ -1,5 +1,5 @@
 # Swarm Attack
- #### Note : Clear cache once in a while
+ #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time.
 ## Team A : Lime
 ## Team B : Red
  
