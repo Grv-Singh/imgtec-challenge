@@ -16,8 +16,7 @@ This simulation on swarm attack within 2 beehives, The queen is the most potent 
  * Some bees seem to rotate in circle due to <a href="https://en.wikipedia.org/wiki/Stroboscopic_effect#:~:text=The%20stroboscopic%20effect%20is%20a,of%20short%20or%20instantaneous%20samples." target="_blank">Stroboscopic effect</a>, more.
 
 ### Check complete logs of simulation :
-In browser console type
-`console.log(logs);`
+Input `console.log(logs);` in browser console
 
 ## Sources
 Sound : <a href="https://www.soundsnap.com/" target="_blank">Bees Sound - Soundsnap</a>
