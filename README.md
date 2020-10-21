@@ -1,6 +1,6 @@
 # Swarm Attack
 
-This simulation on swarm attack within 2 beehives, The queen is the most potent to damages, The Warrior has good attackability, The Worker is like a pawn. Bees move in the direction of their prey with random velocities. With each hit, the health of enemy deplets, denoted by their fading out from background. Whereas the attacker gains a hit, as shown in table. The simulation stays until a Queen Bee is alive, queen's death marks as loss of whole swarm. Some bees have randomly been chosen to defend their position and they are the ones who are stable at same place. The tables on the sides show live score of each swarm.
+This simulation on swarm attack within 2 beehives, The queen is the most potent to damages, The Warrior has good attackability, The Worker is like a pawn. Bees move in the direction of their prey with random velocities. With each hit, the health of enemy deplets, denoted by their fading out from background. Whereas the attacker gains a hit, as shown in table. The simulation stays until a Queen Bee is alive, queen's death marks as loss of whole swarm. Some bees have randomly been chosen to defend their position and they are the ones who are stable at same place. The tables on the sides show live score of each swarm. Any bee with negative health, is known to be dead.
 
  #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time.
 ## Team A : Lime
