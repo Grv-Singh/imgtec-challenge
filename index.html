@@ -273,6 +273,7 @@ blobBWo.vy = randomInt(-1,1) ;
 
 // looping the logic in game
         app.ticker.add((delta) => gameLoop(delta));
+        setTimeout(function(){
 if(scoreA[1][1] <= 0){
 message.text = "Queen A dead, Swarm B wins!";
 window.location.reload();
@@ -283,7 +284,7 @@ message.text = "Queen B dead, Swarm A wins!";
 window.location.reload();
 return false;
         }
-        
+        }, 13000);
       }
       function gameLoop(delta) {
         state(delta);
