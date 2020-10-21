@@ -1,6 +1,9 @@
 # Swarm Attack
 ## Imagination Technologies Full Stack development challenge
  
+## Team A : Lime
+## Team B : Red
+ 
  | Role  | Damage   | Look | Health |
 |-------|----------|------|
 | Queen | 1 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Queen_bee_A.png)| 50 |
