@@ -12,7 +12,7 @@
  
  * Immobile bees can be counted as defendants of beehive.
 *  On each tick, the fighting bees starts to die and therefore shades away from playground.
- 
+ * The bees seem to rotate in circle due to persistence of vision, more.
 Swarming is a honey bee colony's natural means of reproduction. In the process of swarming, a single colony splits into two or more distinct colonies, as shown.
 
 Swarms are usually smaller and are accompanied by a Queen, the biggest here.
