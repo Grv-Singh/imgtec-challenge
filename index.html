@@ -93,7 +93,18 @@ sound.play();
           <!-- wartime counter -->
            <font id="counter" style="color:red;float:left;padding:20px;"></font>
         <font style="font-size:20px;padding:20px;"><b>💪🏻 Playground</b></font>
-          &nbsp; &nbsp;
+        <font style="font-size:12px"></font><a href="https://github.com/Grv-Singh/imgtec-fullstack-challenge">ℹ find explanation, here</a></font>
+        <!-- <font style="float:right;"><i>On each tick, the bee starts to die and therefore shades away from playground   </i></font> -->
+        </center>
+        <!-- playground to emulate fight -->
+        <div id="playground" class="row"></div>
+      </div>
+      <!-- music -->
+      <div class="col-md-2" id="score2" style="float:right;">
+        <iframe src="/imgtec-fullstack-challenge/sounds/background.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+      </div>
+    </div>
+<div class="row">&nbsp; &nbsp;
             <a href="#" onclick="window.location.reload();" class="myButton">Randomise bee formation 🔀 </a>
             <style>
               .myButton {
@@ -128,18 +139,7 @@ sound.play();
                 top: 1px;
               }
             </style>
-          &nbsp; &nbsp;
-        <font style="font-size:12px"></font><a href="https://github.com/Grv-Singh/imgtec-fullstack-challenge">ℹ find explanation, here</a></font>
-        <!-- <font style="float:right;"><i>On each tick, the bee starts to die and therefore shades away from playground   </i></font> -->
-        </center>
-        <!-- playground to emulate fight -->
-        <div id="playground" class="row"></div>
-      </div>
-      <!-- music -->
-      <div class="col-md-2" id="score2" style="float:right;">
-        <iframe src="/imgtec-fullstack-challenge/sounds/background.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
-      </div>
-    </div>
+          &nbsp; &nbsp;</div>
     <script>
       // maintaining sprites
       var spritesA = [], spritesB = [];
