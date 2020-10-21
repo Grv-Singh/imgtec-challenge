@@ -199,13 +199,13 @@ let b = new Bump(PIXI);
           ]
         );
         // random direction movement
-queenA.vx = 1;
+queenA.vx = randomInt(-1,1);
         // attacks B
-queenB.vx = -1;
+queenB.vx = randomInt(-1,1);
         // attacks A
-queenA.vy = 1;
+queenA.vy = randomInt(-1,1);
         // attacks B
-queenB.vy = -1;
+queenB.vy = randomInt(-1,1);
         // attacks A
         queenA.y = 212;
         queenA.x = 10;
@@ -224,10 +224,10 @@ queenB.vy = -1;
           blobA = new Sprite(id["Warrior_bee_A.png"]);
           blobB = new Sprite(id["Warrior_bee_B.png"]);
           
-blobA.vx = 1 ;
-blobB.vx = -1 ;
-blobA.vy = 1 ;
-blobB.vy = -1 ;
+blobA.vx = randomInt(-1,1) ;
+blobB.vx = randomInt(-1,1) ;
+blobA.vy = randomInt(-1,1) ;
+blobB.vy = randomInt(-1,1) ;
           let xA = spacing * i + xOffset;
           let yA = randomInt(0, app.stage.height - blobA.height);
 
@@ -249,10 +249,10 @@ blobB.vy = -1 ;
         for (let i = 0; i < numberOfBlobsWo; i++) {
           blobAWo = new Sprite(id["Worker_bee_A.png"]);
           blobBWo = new Sprite(id["Worker_bee_B.png"]);
-blobAWo.vx = 1 ;
-blobBWo.vx = -1 ;
-blobAWo.vy = 1 ;
-blobBWo.vy = -1 ;
+blobAWo.vx = randomInt(-1,1) ;
+blobBWo.vx = randomInt(-1,1) ;
+blobAWo.vy = randomInt(-1,1) ;
+blobBWo.vy = randomInt(-1,1) ;
           //`xOffset` determines the point from the left of the screen
           let xA = spacingWo * i + xOffsetWo;
           //(`randomInt` is a custom function - see below)
