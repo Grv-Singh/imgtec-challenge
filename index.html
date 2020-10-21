@@ -532,14 +532,16 @@ function update() {
 
       updateTable(scoreA, "score1");
       updateTable(scoreB, "score2");
-var seconds = 0;
-var el = document.getElementById('counter');
 
-function incrementSeconds() {
-    seconds += 1;
-    el.innerText = "Wartime : " + seconds + " seconds.";
-}
-setTimeout(function(){ incrementSeconds(); }, 1000);
+    const seconds = document.querySelector("#counter");
+    let count = 0;
+
+    const renderTimer = () => {
+      count += 1;
+      seconds.innerHTML = "Wartime: "+ (count % 60).toString().padStart(2, "0");
+    }
+
+    const timer = setInterval(renderTimer, 1000);
 
     </script>
   </body>
