@@ -370,19 +370,19 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
           let damageA = 0,damageB = 0;
           if(swarm2!=swarm1){
             switch(character1){
-              case 'Warrior': damageA = 6; c2.alpha -= 1/50;
+              case 'Warrior': damageA = 6; damageB = 6; c2.alpha -= 1/50;
                 break;
-              case 'Worker' : damageA = 3; c2.alpha -= 1/5;
+              case 'Worker' : damageA = 3; damageB = 3; c2.alpha -= 1/5;
                 break;
-              case 'Queen' : damageA = 1; c2.alpha -= 1/10;
+              case 'Queen' : damageA = 1; damageB = 1; c2.alpha -= 1/10;
                 break;
             }
             switch(character2){
-              case 'Warrior': damageB = 6; c1.alpha -= 1/50;
+              case 'Warrior': damageB = 6; damageB = 6; c1.alpha -= 1/50;
                 break;
-              case 'Worker' : damageB = 3; c1.alpha -= 1/5;
+              case 'Worker' : damageB = 3; damageB = 3; c1.alpha -= 1/5;
                 break;
-              case 'Queen' : damageB = 1;  c1.alpha -= 1/10;
+              case 'Queen' : damageB = 1; damageB = 1; c1.alpha -= 1/10;
                 break;
             }
             // console.log(character1,character2);
