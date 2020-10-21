@@ -135,6 +135,10 @@ sound.play();
             </style>
           &nbsp; &nbsp;
         </div>
+        <center>
+          <div id="logs">
+          </div>
+          </center>
       </div>
       <!-- music -->
       <div class="col-md-2" id="score2" style="float:right;">
@@ -144,6 +148,7 @@ sound.play();
     <script>
       // maintaining sprites
       var spritesA = [], spritesB = [];
+      var logs = [];
       // scores data structure
 let b = new Bump(PIXI);
       let loader = PIXI.loader,
@@ -364,7 +369,10 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
               case 'Queen' : damageA = 1; damageB = 1; c1.alpha -= 1/10;
                 break;
             }
-             message.text = ('⚠ ' + character1 + ' ' + swarm1 + ' ' + damageA +' 🩸 to ' + character2 + ' ' + swarm2 + '      ' + character2 + ' ' + swarm2 + ' ' + damageB +' 🩸 to ' + character1 + ' ' + swarm1);
+             let msg =  ('⚠ ' + character1 + ' ' + swarm1 + ' ' + damageA +' 🩸 to ' + character2 + ' ' + swarm2 + '      ' + character2 + ' ' + swarm2 + ' ' + damageB +' 🩸 to ' + character1 + ' ' + swarm1);
+            let arr = [];
+            arr.push(msg);
+            logs.push(arr);
             if(scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1] >= 0){
 //               setTimeout(function(){
           scoreA[parseInt(getKeyByValue(spritesA,c1))+1][1]-=damageB;
@@ -516,7 +524,7 @@ function update() {
   var cellH = rowH.insertCell(0);
   cellH.setAttribute("colspan","3");
   cellH.setAttribute("class","tg-baqh");
-  cellH.innerHTML = (id=="score1"?"<font style='color:lime;'><b>🦟 Swarm A</b></font>":"<font style='color:red;'><b>🦟 Swarm B</b></font>");
+  cellH.innerHTML = id=="logs"?"<font style='color:blue;'><b>Logs</b></font>":(id=="score1"?"<font style='color:lime;'><b>🦟 Swarm A</b></font>":"<font style='color:red;'><b>🦟 Swarm B</b></font>");
         table.setAttribute("class", "tg");
         table.setAttribute("id", id+"H");
         var tableBody = document.createElement("tbody");
@@ -538,6 +546,7 @@ function update() {
 
       updateTable(scoreA, "score1");
       updateTable(scoreB, "score2");
+      updateTable(logs,"logs");
 
     const seconds = document.querySelector("#counter");
     let count = 0;
