@@ -83,7 +83,7 @@
       <div class="col-md-8">
         <center>
           <font style="size:12"></font><a href="https://github.com/Grv-Singh/imgtec-fullstack-challenge">Desciption</a></font>
-           <font style="float:left;"><i>&nbsp; &nbsp; Immobile bees are being defensive</i></font>
+           <font style="float:left;"><i>&nbsp; &nbsp; Immobile bees can be counted as defendants of beehive</i></font>
         <font style="size:16;"><b>Playground</b></font>
         <font style="float:right;"><i>On each tick, the bee starts to die and therefore shades away from playground &nbsp; &nbsp; </i></font>
         </center>
@@ -192,10 +192,10 @@ let b = new Bump(PIXI);
             "Queen_bee_B.png"
           ]
         );
-queenA.vx = randomInt(-1,1) ;
-queenB.vx = randomInt(-1,1) ;
-queenA.vy = randomInt(-1,1) ;
-queenB.vy = randomInt(-1,1) ;
+queenA.vx = randomInt(-2,2) ;
+queenB.vx = randomInt(-2,2) ;
+queenA.vy = randomInt(-2,2) ;
+queenB.vy = randomInt(-2,2) ;
         queenA.y = 212;
         queenA.x = 10;
 
@@ -214,9 +214,9 @@ queenB.vy = randomInt(-1,1) ;
           blobB = new Sprite(id["Warrior_bee_B.png"]);
           
           blobA.vx = 1 ;
-blobB.vx = randomInt(-1,1) ;
-blobA.vy = randomInt(-1,1) ;
-blobB.vy = randomInt(-1,1) ;
+blobB.vx = randomInt(-2,2) ;
+blobA.vy = randomInt(-2,2) ;
+blobB.vy = randomInt(-2,2) ;
           //`xOffset` determines the point from the left of the screen
           let xA = spacing * i + xOffset;
           //(`randomInt` is a custom function - see below)
@@ -241,10 +241,10 @@ blobB.vy = randomInt(-1,1) ;
         for (let i = 0; i < numberOfBlobsWo; i++) {
           blobAWo = new Sprite(id["Worker_bee_A.png"]);
           blobBWo = new Sprite(id["Worker_bee_B.png"]);
-blobAWo.vx = randomInt(-1,1) ;
-blobBWo.vx = randomInt(-1,1) ;
-blobAWo.vy = randomInt(-1,1) ;
-blobBWo.vy = randomInt(-1,1) ;
+blobAWo.vx = randomInt(-2,2) ;
+blobBWo.vx = randomInt(-2,2) ;
+blobAWo.vy = randomInt(-2,2) ;
+blobBWo.vy = randomInt(-2,2) ;
           //`xOffset` determines the point from the left of the screen
           let xA = spacingWo * i + xOffsetWo;
           //(`randomInt` is a custom function - see below)
