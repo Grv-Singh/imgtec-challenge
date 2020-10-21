@@ -25,14 +25,10 @@
       integrity="sha512-bnuwpR6PtZyO1v+cUXlFD5zXNbPg0MGfqnUiAjM5shSWVWjrfKnqiGc4ususMaPjwvAhHOtrmYuDhfMdn8Lz2g=="
       crossorigin="anonymous"
     ></script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    <!-- <script src="/js/sound.js"></script> -->
     <script src="/imgtec-fullstack-challenge/js/howler.js"></script>
     <script src="/imgtec-fullstack-challenge/js/bump.js"></script>
-    <!-- <script src="/js/SpriteUtilities.js"></script> -->
     <script>
-      // var sound = new Howl({
       //   src: ["sound.webm", "sound.mp3"],
-      // });
     </script>
     <script src="https://unpkg.com/@typicode/pegasus/dist/pegasus.min.js"></script>
     <style>
@@ -132,10 +128,8 @@
  </audio>
       </div>
     </div>
-    <!-- <script src="https://raw.githubusercontent.com/kittykatattack/bump/master/src/bump.js"></script> -->
     <script>
       var spritesA = [], spritesB = [];
-      // let u = new SpriteUtilities(PIXI);
       // scores data structure
 let b = new Bump(PIXI);
       let loader = PIXI.loader,
@@ -143,7 +137,6 @@ let b = new Bump(PIXI);
         TextureCache = PIXI.utils.TextureCache,
         Sprite = PIXI.Sprite,
         Rectangle = PIXI.Rectangle;
-      //Create a Pixi Application
       let app = new PIXI.Application({
         width: 1024,
         height: 704,
@@ -152,15 +145,10 @@ let b = new Bump(PIXI);
         resolution: 1, // default: 1
         forceCanvas: true,
       });
-
-      //Add the canvas that Pixi automatically created for you to the HTML document
       document.getElementById("playground").appendChild(app.view);
 
       loader.add("vectors/sprites/bees.json").load(setup);
 
-      // let id = PIXI.loader.resources["vectors/sprites/bees.json"].textures;
-
-      //Define variables that might be used in more
       //than one function
       let style = new PIXI.TextStyle({
         fontFamily: "Arial",
@@ -186,11 +174,8 @@ let b = new Bump(PIXI);
       
       function setup() {
         id = loader.resources["vectors/sprites/bees.json"].textures;
-// boundary = new Sprite(
 //           loader.resources["vectors/sprites/bees.json"].textures[
-//             "boundary.png"
 //           ]
-//         );
         queenA = new Sprite(
           loader.resources["vectors/sprites/bees.json"].textures[
             "Queen_bee_A.png"
@@ -216,15 +201,10 @@ queenB.vy = randomInt(-1,1) ;
         app.stage.addChild(queenA);
         spritesA.push(queenA);
         spritesB.push(queenB);
-
-        //Make the blobs
         let numberOfBlobs = 15,
           spacing = 48,
           xOffset = 150;
-
-        //Make as many blobs as there are `numberOfBlobs`
         for (let i = 0; i < numberOfBlobs; i++) {
-          //Make a blob
           blobA = new Sprite(id["Warrior_bee_A.png"]);
           blobB = new Sprite(id["Warrior_bee_B.png"]);
           
@@ -232,75 +212,48 @@ queenB.vy = randomInt(-1,1) ;
 blobB.vx = randomInt(-1,1) ;
 blobA.vy = randomInt(-1,1) ;
 blobB.vy = randomInt(-1,1) ;
-
-          //Space each blob horizontally according to the `spacing` value.
           //`xOffset` determines the point from the left of the screen
-          //at which the first blob should be added.
           let xA = spacing * i + xOffset;
-
-          //Give the blob a random y position
           //(`randomInt` is a custom function - see below)
           let yA = randomInt(0, app.stage.height - blobA.height);
 
           let xB = spacing * i + xOffset;
-
-          //Give the blob a random y position
           //(`randomInt` is a custom function - see below)
           let yB = randomInt(0, app.stage.height - blobB.height);
-
-          //Set the blob's position
           blobA.x = xA;
           blobA.y = yA;
           blobB.x = xB;
           blobB.y = yB;
-
-          //Add the blob sprite to the stage
           app.stage.addChild(blobA);
           app.stage.addChild(blobB);
           spritesA.push(blobA);
           spritesB.push(blobB);
         }
         app.ticker.add((delta) => gameLoop(delta));
-        //Make the blobs
         let numberOfBlobsWo = 20,
           spacingWo = 48,
           xOffsetWo = 150;
-
-        //Make as many blobs as there are `numberOfBlobs`
         for (let i = 0; i < numberOfBlobsWo; i++) {
-          //Make a blob
           blobAWo = new Sprite(id["Worker_bee_A.png"]);
           blobBWo = new Sprite(id["Worker_bee_B.png"]);
 blobAWo.vx = randomInt(-1,1) ;
 blobBWo.vx = randomInt(-1,1) ;
 blobAWo.vy = randomInt(-1,1) ;
 blobBWo.vy = randomInt(-1,1) ;
-          //Space each blob horizontally according to the `spacing` value.
           //`xOffset` determines the point from the left of the screen
-          //at which the first blob should be added.
           let xA = spacingWo * i + xOffsetWo;
-
-          //Give the blob a random y position
           //(`randomInt` is a custom function - see below)
           let yA = randomInt(0, app.stage.height - blobAWo.height);
 
           let xB = spacingWo * i + xOffsetWo;
-
-          //Give the blob a random y position
           //(`randomInt` is a custom function - see below)
           let yB = randomInt(0, app.stage.height - blobBWo.height);
-
-          //Set the blob's position
           blobAWo.x = xA;
           blobAWo.y = yA;
-          // blobAWo.vx = 0;
           // blobAWo.vy = 0;
           blobBWo.x = xB;
           blobBWo.y = yB;
-          // blobAWo.vx = 0;
           // blobAWo.vy = 0;
-
-          //Add the blob sprite to the stage
           app.stage.addChild(blobAWo);
           app.stage.addChild(blobBWo);
           spritesA.push(blobAWo);
@@ -337,8 +290,6 @@ spritesB[i].rotation += 3.14;
         if(spritesB[i].y<=0 || spritesB[i].y >=704){
           spritesB[i].vy *=-1;
         }
-
-          // spritesB[i].vx = 1;
           // spritesB[i].vy = 1;
         
         spritesB[i].x += spritesB[i].vx;
@@ -352,27 +303,17 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
         }
         if(spritesA[j].y<=0 || spritesA[j].y >=704){
           spritesA[j].vy *=-1;
-          // spritesA[j].rotation += 3.14;
         }
-
-          // spritesA[j].vx = 1;
           // spritesA[j].vy = 1;
         
         spritesA[j].x -= spritesA[j].vx;
         spritesA[j].y -= spritesA[j].vy;
         }
-        //check for a collision between the cat and the box
         
         for (let i = 0; i < spritesA.length; i++) {
-
-  //The first marble to use in the collision check
   var c1 = spritesA[i];
   for (let j = i + 1; j < spritesB.length; j++) {
-
-    //The second marble to use in the collision check
     let c2 = spritesB[j];
-
-    //Check for a collision and bounce the marbles apart if they collide
     if (b.hit(c1, c2, true, true)) {          
           let character1 = (c1._texture.textureCacheIds[0]).split('_')[0];
           let swarm1 = ((c1._texture.textureCacheIds[0]).split('_')[2]).split('.')[0];
@@ -396,7 +337,6 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
               case 'Queen' : damageB = 1; damageB = 1; c1.alpha -= 1/10;
                 break;
             }
-            // console.log(character1,character2);
             if(scoreA[parseInt(getKeyByValue(spritesA,c1))+2][1] >= 0){
           scoreA[parseInt(getKeyByValue(spritesA,c1))+2][1]-=damageB;
           scoreA[parseInt(getKeyByValue(spritesA,c1))+2][2]+=1;
@@ -417,10 +357,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
 
           update();
           }
-          
-          // console.log(c1);
           // update(queenA,queenB);
-          // box.tint = 0xff3300;
         }
         
         }
@@ -444,48 +381,29 @@ function update() {
       }
 
       function hitTestRectangle(r1, r2) {
-        //Define the variables we'll need to calculate
         let hit, combinedHalfWidths, combinedHalfHeights, vx, vy;
-
-        //hit will determine whether there's a collision
         // hit = false;
-
-        //Find the center points of each sprite
         r1.centerX = r1.x + r1.width / 2;
         r1.centerY = r1.y + r1.height / 2;
         r2.centerX = r2.x + r2.width / 2;
         r2.centerY = r2.y + r2.height / 2;
-
-        //Find the half-widths and half-heights of each sprite
         r1.halfWidth = r1.width / 2;
         r1.halfHeight = r1.height / 2;
         r2.halfWidth = r2.width / 2;
         r2.halfHeight = r2.height / 2;
-
-        //Calculate the distance vector between the sprites
         vx = r1.centerX - r2.centerX;
         vy = r1.centerY - r2.centerY;
-
-        //Figure out the combined half-widths and half-heights
         combinedHalfWidths = r1.halfWidth + r2.halfWidth;
         combinedHalfHeights = r1.halfHeight + r2.halfHeight;
-
-        //Check for a collision on the x axis
         if (Math.abs(vx) < combinedHalfWidths) {
-          //A collision might be occurring. Check for a collision on the y axis
           if (Math.abs(vy) < combinedHalfHeights) {
-            //There's definitely a collision happening
             hit = true;
           } else {
-            //There's no collision on the y axis
             hit = false;
           }
         } else {
-          //There's no collision on the x axis
           hit = false;
         }
-
-        //`hit` will be either `true` or `false`
         return hit;
       }
       
@@ -610,30 +528,18 @@ function update() {
 
       updateTable(scoreA, "score1");
       updateTable(scoreB, "score2");
-
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-// Update the count down every 1 second
+var t = new Date();
+t.setSeconds(t.getSeconds() + 10);
+var countDownDate = t.getTime();
 var x = setInterval(function() {
-
-  // Get today's date and time
   var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
