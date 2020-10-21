@@ -537,6 +537,7 @@ sound.pause();
 // win.play();
 message.text = "Queen A dead, Swarm B wins!";
 location.reload();
+return true;
         }
         if(scoreB[1][1] <= 0){
           var win = new Howl({
@@ -546,6 +547,7 @@ sound.pause();
 // win.play();
 message.text = "Queen B dead, Swarm A wins!";
 location.reload();
+return true;
         }
       }
 
