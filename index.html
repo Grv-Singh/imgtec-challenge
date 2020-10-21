@@ -177,8 +177,9 @@ let b = new Bump(PIXI);
         dropShadowAngle: Math.PI / 6,
         dropShadowDistance: 6,
       });
-
+setTimeout(function(){
       let message = new PIXI.Text("Fight to survive !", style);
+},2000);
       message.position.set(250, 500);
       app.stage.addChild(message);
       app.renderer.autoDensity = true;
