@@ -319,7 +319,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
   var c1 = spritesA[i];
   for (let j = i + 1; j < spritesB.length; j++) {
     let c2 = spritesB[j];
-    count = 0;
+    counts = 0;
     if (hitTestRectangle(c1, c2)) {     
       // getting metadata of the 2 bees fighting     
           let character1 = (c1._texture.textureCacheIds[0]).split('_')[0];
@@ -415,7 +415,7 @@ function update() {
         combinedHalfHeights = r1.halfHeight + r2.halfHeight;
         if (Math.abs(vx) < combinedHalfWidths) {
           if (Math.abs(vy) < combinedHalfHeights && counts<1) {
-            count++;
+            counts++;
             hit = true;
           } else {
             hit = false;
