@@ -326,7 +326,7 @@ if(spritesA[j].x>=1024 || spritesA[j].x <=0){
         
         for (let i = 0; i < spritesA.length; i++) {
   var c1 = spritesA[i];
-  for (let j = i + 1; j < spritesB.length; j++) {
+  for (let j = i ; j < spritesB.length; j++) {
     let c2 = spritesB[j];
     if (b.hit(c1, c2, true, true)) {     
       // getting metadata of the 2 bees fighting     
