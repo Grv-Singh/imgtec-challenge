@@ -81,7 +81,68 @@ sound.play();
         </center>
 <!-- playground to emulate fight -->
         <div id="playground" class="row"></div>
-        <div style="float:left;"><h3 id="counter" style="color:red;float:left;"></h3></div>
+        <div style="float:left;"><h3 id="counter" style="color:red;float:left;"></h3>
+        
+          <div>
+            <h1 id="swarm-attack">Swarm Attack</h1>
+<p>This simulation on swarm attack within 2 beehives, The queen is the most potent to damages, The Warrior has good attackability, The Worker is like a pawn. Bees move in the direction of their prey with random velocities. With each hit, the health of enemy deplets, denoted by their fading out from background. Whereas the attacker gains a hit, as shown in table. The simulation stays until a Queen Bee is alive, queen&#39;s death marks as loss of whole swarm. Some bees have randomly been chosen to defend their position and they are the ones who are stable at same place. The tables on the sides show live score of each swarm. Any bee with negative health, is known to be dead. The net time of engagement and falling of one of the troop is shown in the counter. One can random the start position of Bees, with the randomization button. The notifier at the bottom shows live attacks &amp; what is the status of it. Bees should be safe from corners as it&#39;s vulnerable to bees coming from either directions (N-W &amp; S-E)</p>
+<h2 id="team-a-lime-1-queen-15-warriors-20-workers">Team A : Lime | 1 Queen | 15 Warriors | 20 Workers</h2>
+<h2 id="team-b-red-1-queen-15-warriors-20-workers">Team B : Red | 1 Queen | 15 Warriors | 20 Workers</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Damage</th>
+<th>Look</th>
+<th>Health</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Queen</td>
+<td>1</td>
+<td><img src="https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Queen_bee_A.png" alt=""></td>
+<td>50</td>
+</tr>
+<tr>
+<td>Warrior</td>
+<td>4-7</td>
+<td><img src="https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Warrior_bee_A.png" alt=""></td>
+<td>10</td>
+</tr>
+<tr>
+<td>Worker</td>
+<td>2-4</td>
+<td><img src="https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png" alt=""></td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Immobile bees can be counted as defendants of beehive.<ul>
+<li>With respective damage of each bite, the health depletes, denoted by being faded away from playground.</li>
+</ul>
+</li>
+<li>Some bees seem to rotate in circle due to <a href="https://en.wikipedia.org/wiki/Stroboscopic_effect#:~:text=The%20stroboscopic%20effect%20is%20a,of%20short%20or%20instantaneous%20samples." target="_blank">Stroboscopic effect</a>.</li>
+</ul>
+<h3 id="check-complete-logs-of-simulation-">Check complete logs of simulation :</h3>
+<p>Input <code>console.log(logs);</code> in browser console</p>
+<h2 id="sources">Sources</h2>
+<p>Sound : <a href="https://www.soundsnap.com/" target="_blank">Bees Sound - Soundsnap</a></p>
+<p>Libraries : <a href="https://www.pixijs.com/" target="_blank">Pixie</a></p>
+<h2 id="references">References</h2>
+<p>Theory :  <a href="https://www.mdbka.com/bee-information/#:~:text=The%20main%20difference%20is%20that,food%2C%20insects%2C%20or%20spiders.&text=The%20worker%20bees%20are%20female,do%20not%20have%20a%20sting." target="_blank">Bee Information</a></p>
+<p>Idea : <a href="https://www.youtube.com/watch?v=mDR0_yfKQa0" target="_blank">Video</a></p>
+<h2 id="future-scope">Future Scope</h2>
+<ul>
+<li>Keyboard controls.</li>
+<li><p>Responsive Design</p>
+<h4 id="note-clear-cache-once-in-a-while-github-cdn-seems-to-deliver-audio-not-all-the-time-simulation-requires-one-to-be-active-on-tab-">Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time. Simulation requires one to be active on tab.</h4>
+</li>
+</ul>
+
+          </div>
+        </div>
       <div style="float:right;">
        &nbsp; &nbsp;
             <a href="#" onclick="window.location.reload();" class="myButton">Randomise bee formation 🔀 </a>
