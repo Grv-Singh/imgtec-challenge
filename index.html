@@ -274,6 +274,12 @@ sound.play();
         for (let i = 0; i < numberOfBlobs; i++) {
           blobA = new Sprite(id["Warrior_bee_A.png"]);
           blobB = new Sprite(id["Warrior_bee_B.png"]);
+          let alt = new PIXI.Text(i.toString());
+          alt.position.set(blobA.x+10, blobA.y+10);
+          app.stage.addChild(alt);
+          let alt2 = new PIXI.Text(i.toString());
+          alt2.position.set(blobB.x+10, blobB.y+10);
+          app.stage.addChild(alt2);
           
           blobA.vx = randomInt(-1,1) ;
           blobB.vx = randomInt(-1,1) ;
@@ -300,6 +306,12 @@ sound.play();
         for (let i = 0; i < numberOfBlobsWo; i++) {
           blobAWo = new Sprite(id["Worker_bee_A.png"]);
           blobBWo = new Sprite(id["Worker_bee_B.png"]);
+          let alt = new PIXI.Text(i.toString());
+          alt.position.set(blobAWo.x+10, blobAWo.y+10);
+          app.stage.addChild(alt);
+          let alt2 = new PIXI.Text(i.toString());
+          alt2.position.set(blobBWo.x+10, blobBWo.y+10);
+          app.stage.addChild(alt2);
           blobAWo.vx = randomInt(-1,1) ;
           blobBWo.vx = randomInt(-1,1) ;
           blobAWo.vy = randomInt(-1,1) ;
