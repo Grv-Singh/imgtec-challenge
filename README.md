@@ -33,4 +33,4 @@ Idea : <a href="https://www.youtube.com/watch?v=mDR0_yfKQa0" target="_blank">Vid
 * Keyboard controls.
 * Responsive Design
 
- #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time.
+ #### Note : Clear cache once in a while, Github CDN seems to deliver audio not all the time. Simulation requires one to be active on tab.
