@@ -8,8 +8,8 @@ This simulation on swarm attack within 2 beehives, The queen is the most potent 
  | Role  | Damage   | Look | Health |
 |-------|----------|------|-------|
 | Queen | 1 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Queen_bee_A.png)| 50 |
-| Warrior | random b/w 4-7 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Warrior_bee_A.png)| 10 |
-| Worker | rando b/w 2,4 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png)| 5 |
+| Warrior | 4-7 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Warrior_bee_A.png)| 10 |
+| Worker | 2,4 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png)| 5 |
  
  * Immobile bees can be counted as defendants of beehive.
 *  With respective damage of each bite, the healh depletes, denoted by being faded away from playground.
