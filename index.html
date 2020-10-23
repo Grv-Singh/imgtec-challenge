@@ -330,11 +330,13 @@ sound.play();
         app.ticker.add((delta) => gameLoop(delta));
         setTimeout(function(){
         if(scoreA[1][1] <= 0){
+          sound.pause();
           alert(" 👑 Queen A dead 😕, Swarm B wins! 🏆");
           window.location.reload();
           return false;
         }
         if(scoreB[1][1] <= 0){
+          sound.pause();
           alert(" 👑 Queen B dead 😕, Swarm A wins! 🏆");
           window.location.reload();
           return false;
