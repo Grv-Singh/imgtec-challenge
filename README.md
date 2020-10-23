@@ -12,7 +12,7 @@ This simulation on swarm attack within 2 beehives, The queen is the most potent 
 | Worker | 2-4 |![](https://raw.githubusercontent.com/Grv-Singh/imgtec-fullstack-challenge/main/vectors/Worker_bee_A.png)| 5 |
  
  * Immobile bees can be counted as defendants of beehive.
-*  With respective damage of each bite, the healh depletes, denoted by being faded away from playground.
+*  With respective damage of each bite, the health depletes, denoted by being faded away from playground.
  * Some bees seem to rotate in circle due to <a href="https://en.wikipedia.org/wiki/Stroboscopic_effect#:~:text=The%20stroboscopic%20effect%20is%20a,of%20short%20or%20instantaneous%20samples." target="_blank">Stroboscopic effect</a>.
 
 ### Check complete logs of simulation :
