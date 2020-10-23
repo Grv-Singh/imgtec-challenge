@@ -270,12 +270,12 @@ sound.play();
         app.ticker.add((delta) => gameLoop(delta));
         setTimeout(function(){
         if(scoreA[1][1] <= 0){
-          alert("Simulation took "+count+" seconds. 👑 Queen A dead 😕, Swarm B wins! 🏆");
+          alert(" 👑 Queen A dead 😕, Swarm B wins! 🏆");
           window.location.reload();
           return false;
         }
         if(scoreB[1][1] <= 0){
-          alert("Simulation took "+count+" seconds.👑 Queen B dead 😕, Swarm A wins! 🏆");
+          alert(" 👑 Queen B dead 😕, Swarm A wins! 🏆");
           window.location.reload();
           return false;
         }
