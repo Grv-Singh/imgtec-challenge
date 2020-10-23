@@ -1,5 +1,5 @@
 <?php
-    echo "let's begin";
+    echo "let's begin. Interactivity need graphics here, need to switch to JS";
 ?>
 
 <!DOCTYPE html>
