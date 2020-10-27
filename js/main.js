@@ -25,8 +25,11 @@ let app = new PIXI.Application({
     resolution: 1,
     forceCanvas: true,
 });
+
+$(document).ready(function(){
 // making window
 document.getElementById("playground").appendChild(app.view);
+});
 
 loader.add("vectors/sprites/bees.json").load(setup);
 // getting shaders
