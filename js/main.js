@@ -12,6 +12,8 @@ var spritesA = [],
     spritesB = [],
     logs = [];
 
+logs.push('---------- Attack Begins, Swarm A to B & vice-versa ----------');
+
 // scores data structure
 let b = new Bump(PIXI);
 
@@ -52,7 +54,9 @@ let style = new PIXI.TextStyle({
 });
 
 let message = new PIXI.Text("Fight to survive, begin !", style);
+
 message.position.set(200, 500);
+
 app.stage.addChild(message);
 app.renderer.autoDensity = true;
 app.renderer.view.style.position = "relative";
@@ -78,47 +82,54 @@ function setup() {
             "Queen_bee_B.png"
         ]
     );
+    
     // random direction movement
     queenA.vx = randomInt(-1, 1);
-    // attacks B
     queenB.vx = randomInt(-1, 1);
-    // attacks A
     queenA.vy = randomInt(-1, 1);
-    // attacks B
     queenB.vy = randomInt(-1, 1);
-    // attacks A
+    
     queenA.y = 212;
     queenA.x = 10;
 
     queenB.x = 900;
     queenB.y = 212;
+    
     // add sprites to board
     app.stage.addChild(queenB);
     app.stage.addChild(queenA);
+    
     spritesA.push(queenA);
     spritesB.push(queenB);
+    
     let numberOfBlobs = 15,
         spacing = 48,
         xOffset = 150;
+    
     for (let i = 0; i < numberOfBlobs; i++) {
         blobA = new Sprite(id["Warrior_bee_A.png"]);
         blobB = new Sprite(id["Warrior_bee_B.png"]);
-
+        
+        //random velocities
         blobA.vx = randomInt(-1, 1);
         blobB.vx = randomInt(-1, 1);
         blobA.vy = randomInt(-1, 1);
         blobB.vy = randomInt(-1, 1);
+    
         let xA = spacing * i + xOffset;
         let yA = randomInt(0, app.stage.height - blobA.height);
 
         let xB = spacing * i + xOffset;
         let yB = randomInt(0, app.stage.height - blobB.height);
+        
         blobA.x = xA;
         blobA.y = yA;
         blobB.x = xB;
         blobB.y = yB;
+        
         app.stage.addChild(blobA);
         app.stage.addChild(blobB);
+        
         spritesA.push(blobA);
         spritesB.push(blobB);
     }
@@ -129,7 +140,8 @@ function setup() {
     for (let i = 0; i < numberOfBlobsWo; i++) {
         blobAWo = new Sprite(id["Worker_bee_A.png"]);
         blobBWo = new Sprite(id["Worker_bee_B.png"]);
-
+        
+        //random velocities
         blobAWo.vx = randomInt(-1, 1);
         blobBWo.vx = randomInt(-1, 1);
         blobAWo.vy = randomInt(-1, 1);
@@ -161,15 +173,19 @@ function setup() {
 
     // looping the logic in game
     app.ticker.add((delta) => gameLoop(delta));
+    
+    //waiting for simulation to conclude
     setTimeout(function() {
         if (scoreA[1][1] <= 0) {
             sound.pause();
+            logs.push("----- Quen A dead, Swarm B wins -----");
             alert(" 👑 Queen A dead 😕, Swarm B wins! 🏆");
             window.location.reload();
             return false;
         }
         if (scoreB[1][1] <= 0) {
             sound.pause();
+            logs.push("----- Quen B dead, Swarm A wins -----");
             alert(" 👑 Queen B dead 😕, Swarm A wins! 🏆");
             window.location.reload();
             return false;
@@ -243,6 +259,7 @@ function play(delta) {
                             damageA = 1;
                             damageB = 1;
                             c2.alpha -= 1 / 10;
+                            logs.push('----- Queen A attacked by '+ character2 +', remaining health is '+scoreA[parseInt(getKeyByValue(spritesB, c2)) + 1][1]+' -----');
                             break;
                     }
                     switch (character2) {
@@ -260,13 +277,17 @@ function play(delta) {
                             damageA = 1;
                             damageB = 1;
                             c1.alpha -= 1 / 10;
+                            logs.push('----- Queen B attacked by '+ character1 +', remaining health is '+scoreB[parseInt(getKeyByValue(spritesA, c1)) + 1][1]+' -----');
                             break;
                     }
                     let msg = ('⚠ ' + character1 + ' ' + swarm1 + ' ' + damageA + ' 🗡 to ' + character2 + ' ' + swarm2 + '      ' + character2 + ' ' + swarm2 + ' ' + damageB + ' 🗡 to ' + character1 + ' ' + swarm1);
                     message.text = msg;
+                    
                     let arr = [];
                     arr.push(msg);
+                    
                     logs.push(arr);
+                    
                     if (scoreA[parseInt(getKeyByValue(spritesA, c1)) + 1][1] >= 0) {
                         scoreA[parseInt(getKeyByValue(spritesA, c1)) + 1][1] -= damageB;
                         scoreA[parseInt(getKeyByValue(spritesA, c1)) + 1][2] += 1;
