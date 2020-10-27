@@ -6,17 +6,21 @@ sound.play();
 
 // main counter
 var count = 0;
+
 // maintaining sprites
 var spritesA = [],
-    spritesB = [];
-var logs = [];
+    spritesB = [],
+    logs = [];
+
 // scores data structure
 let b = new Bump(PIXI);
+
 let loader = PIXI.loader,
     resources = PIXI.loader.resources,
     TextureCache = PIXI.utils.TextureCache,
     Sprite = PIXI.Sprite,
     Rectangle = PIXI.Rectangle;
+
 let app = new PIXI.Application({
     width: 1024,
     height: 704,
@@ -27,11 +31,12 @@ let app = new PIXI.Application({
 });
 
 $(document).ready(function(){
-// making window
-document.getElementById("playground").appendChild(app.view);
+    // making window
+    document.getElementById("playground").appendChild(app.view);
 });
 
 loader.add("vectors/sprites/bees.json").load(setup);
+
 // getting shaders
 let style = new PIXI.TextStyle({
     fontFamily: "Arial",
@@ -58,6 +63,7 @@ app.renderer.resize(window.innerWidth, window.innerHeight);
 var queenA, queenB, id;
 var blobAWo, blobBWo, blobA, blobB;
 let state = play;
+
 // setup of drawings
 function setup() {
     id = loader.resources["vectors/sprites/bees.json"].textures;
@@ -128,22 +134,27 @@ function setup() {
         blobBWo.vx = randomInt(-1, 1);
         blobAWo.vy = randomInt(-1, 1);
         blobBWo.vy = randomInt(-1, 1);
+
         //`xOffset` determines the point from the left of the screen
         let xA = spacingWo * i + xOffsetWo;
+        
         //(`randomInt` is a custom function - see below)
         let yA = randomInt(0, app.stage.height - blobAWo.height);
 
         let xB = spacingWo * i + xOffsetWo;
+        
         //(`randomInt` is a custom function - see below)
         let yB = randomInt(0, app.stage.height - blobBWo.height);
+        
         blobAWo.x = xA;
         blobAWo.y = yA;
-        // blobAWo.vy = 0;
+        
         blobBWo.x = xB;
         blobBWo.y = yB;
-        // blobAWo.vy = 0;
+        
         app.stage.addChild(blobAWo);
         app.stage.addChild(blobBWo);
+        
         spritesA.push(blobAWo);
         spritesB.push(blobBWo);
     }
@@ -173,8 +184,8 @@ let hit = false;
 
 function play(delta) {
     for (i = 0; i < spritesB.length; i++) {
+        
         // rotation to get bee effect
-
         if (spritesB[i].x >= window.innerWidth || spritesB[i].x <= 0) {
             spritesB[i].vx *= -1;
             spritesB[i].rotation += 1;
@@ -187,8 +198,8 @@ function play(delta) {
         spritesB[i].y += (spritesB[i].vy * 3);
     }
     for (j = 0; j < spritesA.length; j++) {
+        
         // rotation to get bee effect
-
         if (spritesA[j].x >= 1024 || spritesA[j].x <= 0) {
             spritesA[j].vx *= -1;
             spritesA[j].rotation += 1;
@@ -207,6 +218,7 @@ function play(delta) {
         for (let j = i; j < spritesB.length; j++) {
             let c2 = spritesB[j];
             if (b.hit(c1, c2, true, true)) {
+                
                 // getting metadata of the 2 bees fighting     
                 let character1 = (c1._texture.textureCacheIds[0]).split('_')[0];
                 let swarm1 = ((c1._texture.textureCacheIds[0]).split('_')[2]).split('.')[0];
@@ -268,12 +280,8 @@ function play(delta) {
                     update();
                 }
             }
-
         }
     }
-
-
-
 }
 
 
@@ -286,6 +294,7 @@ function update() {
     updateTable(scoreA, "score1");
     updateTable(scoreB, "score2");
 }
+
 // random number genarator
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -383,6 +392,7 @@ var scoreB = [
     ["Worker19", 5, 0],
     ["Worker20", 5, 0],
 ];
+
 // reupdate the table 
 function updateTable(tableData, id) {
     document.getElementById(id).innerHTML = "";
@@ -393,18 +403,23 @@ function updateTable(tableData, id) {
     var header = table.createTHead();
     var rowH = header.insertRow(0);
     var cellH = rowH.insertCell(0);
+
     cellH.setAttribute("colspan", "3");
     cellH.setAttribute("class", "tg-baqh");
     cellH.innerHTML = id == "logs" ? "<font style='color:blue;'><b>Logs</b></font>" : (id == "score1" ? "<font style='color:lime;'><b>🦟 Swarm A</b></font>" : "<font style='color:red;'><b>🦟 Swarm B</b></font>");
+    
     table.setAttribute("class", "tg");
     table.setAttribute("id", id + "H");
+    
     var tableBody = document.createElement("tbody");
     tableData.forEach(function(rowData) {
         var row = document.createElement("tr");
         rowData.forEach(function(cellData) {
             var cell = document.createElement("td");
+            
             cell.setAttribute("class", "tg-0lax");
             cell.appendChild(document.createTextNode(cellData));
+            
             row.appendChild(cell);
         });
 
